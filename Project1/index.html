@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<title>Shivani Eli Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<style>
+    body{
+        background-color: black;
+    }
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px;
+        
+    }
+
+    .bgimg {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('images/img1.png');
+        min-height: 100%;
+    }
+    #stock{
+        background-color: grey;
+        color: #ffff;
+    }
+    #me{
+        color: white;
+    }
+    #email{
+        color: white;
+    }
+    #weather-info{
+        color: white;
+    }
+    #about{
+        color: white;
+    }
+    #waph{
+        align-items: center;
+    }
+    
+</style>
+
+<body>
+
+    <!-- Sidebar with image -->
+    <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+        <div class="bgimg"></div>
+    </nav>
+
+    <!-- Sidebar (reveals when clicked on menu icon)-->
+    <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge"
+        style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+        <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright"
+            style="padding:0 12px;">
+            <i class="fa fa-remove"></i>
+        </a>
+        <div class="w3-bar-block w3-center">
+            <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+            <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+                onclick="closeNav()">My Portfolio</a>
+            <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About Me</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+                onclick="closeNav()">Contact</a>
+            <a href="#root" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Today's Stock data</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="w3-main w3-padding-large" style="margin-left:40%">
+
+        <!-- Menu icon to open sidebar -->
+        <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;"
+            onclick="openNav()"><i class="fa fa-bars"></i></span>
+        <!--tracker-->
+        <div id="tracker">
+            <a href="https://info.flagcounter.com/2NNY"><img
+                    src="https://s01.flagcounter.com/count2/2NNY/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
+                    alt="Flag Counter" border="0"></a>
+        </div>
+        <!--cookie-->
+        <h1>
+            <div id="welcome-message" class="w3-container w3-center" style="color: white;">
+                <!-- Welcome message will be displayed here -->
+            </div>
+        </h1>
+        <!-- Header -->
+        <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+            <h1 class="w3-jumbo" id="me"><b>Shivani Eli</b></h1>
+         
+            <div id="digital-clock"></div>
+            <div id="email"onclick="showhideEmail()">Click here! Show my email</div>
+            <a href="SERESUME.pdf" download>
+            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" action="SERESUME.pdf">
+                <i class="fa fa-download"></i> Download my Resume
+            </button>
+            </a>
+        </header>
+
+        <!-- Portfolio Section -->
+        <div class="w3-padding-32 w3-content" id="portfolio">
+            <h2 class="w3-text-grey">My Portfolio</h2>
+            <hr class="w3-opacity">
+
+            <!-- weather,analog clock-->
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <canvas id="analog-clock" width="150" height="150" style="background-color:#999 ;"></canvas>
+                   
+                   <br><label style="color: white;">Analog clock</label>
+                </div>
+
+                <div class="w3-half">
+                    <div id="weather-info">
+                        <!-- Weather icon will be displayed here -->
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <div id="weather-details"></div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!-- End Portfolio Section -->
+        </div>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify  w3-padding-32" id="about">
+            <div id="summary" style=" color:white;">
+            <h2>About</h2>
+            <hr class="w3-opacity w3-center">
+            <p>I am Shivani Eli, currently pursuing masters in IT at University of cincinnati. I am looking for working opportunities in full stack.<br>
+               Currently I have enrolled the Web Application programming and Hacking course. <a href="waph.html" style="background-color: #999;">Click here to find the course details.</a>
+                
+            </p>
+            </div>
+            <h2 class="w3-padding-16">My Skills</h2>
+            <hr>
+            <p class="w3-wide">HTML CSS</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:95%">95%</div>
+            </div>
+            <p class="w3-wide">JavaScript</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">85%</div>
+            </div>
+            <p class="w3-wide">ReactJs</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">70%</div>
+            </div>
+            <p class="w3-wide">SQL</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">75%</div>
+            </div>
+            <p class="w3-wide">C++</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">80%</div>
+            </div><br>
+            <div class="Education">
+                <div class="1">
+                    <h2>Education</h2>
+                    <hr>
+                    <h3>Master's in Information Technology</h3>
+                    <h4>University of Cincinnati, OH, USA</h4>
+                    <h4 style="float: right;">Aug 2023- present</h4>
+                    Current CGPA:3.75/4.0<br><br><br>
+                    <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                    <h3>GITAM University, India</h3>
+                    <h4 style="float: right;">June 2018 - April 2022</h4>
+                    CGPA: 8.81/10.0<br><br><br>
+                </div>
+            <div class="Experience">
+                <div class="1">
+                    <h2>Experience</h2>
+                    <hr>
+                    <h3>Software Engineer</h3>
+                    <h4>LTIMindtree</h4>
+                    <h4 style="float: right;">Feb 2022- Jul 2023</h4>
+                    <h4><i>Bengaluru, Karnataka</i></h4>
+                    <br><br>
+                    
+                    <li>Developing a web application, using HTML,CSS, JavaScript for ReactJS on client-side and JavaScript for
+                    NodeJS, Express on server-side.</li>
+                    <li>Implementing state management libraries such as Redux API to manage the application’s state effectively.</li>
+                    <li>Handling HTTP requests, implementing authentication, managing sessions, and integrating with APIs.</li>
+                    <li>Technologies used ReactJS, MongoDB, ExpressJS, NoSQL, NodeJS, JavaScript</li>
+                </div>
+            <div class="projects">
+                <div class="1">
+                    <h2>Projects</h2>
+                    <hr>
+                    <h4>Travel Explore Web Application</h4>
+                    <li>Developed a full-stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS to create an interactive
+                    platform for travelers to discover destinations, planning trips, and share experiences.</li>
+                    <li>Designed and implemented a user-friendly ReactJS interface with a dynamic home page, simplified navigation,
+                    and essential features like booking stays, exploring holiday packages, user authentication, and destination search
+                    tool.</li>
+                    <li>Designed and implemented Redux API using NodeJS and ExpressJS, enabling seamless communication between
+                    the frontend and backend for features like user authentication, booking stay history, and data retrieval.
+                    Employed MongoDB for efficient data storage, schema design, and retrieval, ensuring scalability and optimized
+                    performance for handling diverse travel-related content and user credentials data.</li>
+                    <li>Technologies used ReactJS, MongoDB, ExpressJS, NoSQL, NodeJS, JavaScript, HTML,CS</li>
+                </div>
+            
+                <!--react news api div and react lib
+                <div class="news" id="root"></div>-->
+                <div id="stock"></div>
+                
+                <script type="text/babel">
+                    function StockData() {
+                        const [stockData, setStockData] = React.useState(null);
+                        const [loading, setLoading] = React.useState(true);
+
+                        React.useEffect(() => {
+                            fetch("https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09?apiKey=T6Qj4oY6AG3VP0VGrhmegCHTWB6w4l_6")
+                                .then(response => response.json())
+                                .then(data => {
+                                    setStockData(data);
+                                    setLoading(false);
+                                })
+                                .catch(error => console.log("Error fetching stock data:", error));
+                        }, []);
+
+                        return (
+                            <div>
+                                <h1>Stock Market Data</h1>
+                                {loading ? (
+                                    <p>Loading...</p>
+                                ) : (
+                                    <div>
+                                        <p>Date: {stockData.results[0].t}</p>
+                                        <p>Open: {stockData.results[0].o}</p>
+                                        <p>High: {stockData.results[0].h}</p>
+                                        <p>Low: {stockData.results[0].l}</p>
+                                        <p>Close: {stockData.results[0].c}</p>
+                                        <p>Volume: {stockData.results[0].v}</p>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    }
+
+                    ReactDOM.render(<StockData />, document.getElementById("stock"));
+                </script>
+                <!--stock end-->
+                
+                <!-- Include React and ReactDOM libraries -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+                
+                <!-- Include Babel standalone for JSX transpilation -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+                
+                <!-- Include Axios library for making HTTP requests -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+
+               
+
+
+
+            
+        <!-- Contact Section -->
+        <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+            <h2>Contact Me</h2>
+            <hr class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Cincinnati,OH  US</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1 (513) 399.0398</p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: elisi@mail.uc.edu</p>
+            </div>
+
+            <br><br>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64  w3-center w2-opacity w3-xlarge" style="margin:-24px; background-color:grey; color:white;">
+            <div id="response"></div>
+            <!-- End footer -->
+        </footer>
+
+        <!-- END PAGE CONTENT -->
+    </div>
+
+    <script>
+        // Open and close sidebar
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "60%";
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+    <script src="https://waph-uc.github.io/clock.js"></script>
+   <script>
+    //digital clock
+    
+	function displayTime() {
+		document.getElementById('digital-clock').innerHTML = "Current time: "+new Date();
+	}
+	setInterval(displayTime, 500);
+	function validateInput(inputId){
+		var input=document.getElementById(inputId).value;
+		if(input.length==0){
+			alert("please enter text");
+			return false;
+		}
+		return true;
+	}
+	function encodeInput(input){
+		const encodeData=document.createElement('div');
+		encodeData.innerText=input;
+		return encodeData.innerHTML;
+	}
+    //end digital-clock
+
+    //analog clock
+    var canvas = document.getElementById("analog-clock");
+        var ctx = canvas.getContext("2d");
+        var radius = canvas.height / 2;
+        ctx.translate(radius, radius);
+        radius = radius * 0.90;
+        setInterval(drawClock, 1000);
+
+        function drawClock() {
+            drawFace(ctx, radius);
+            drawNumbers(ctx, radius);
+            drawTime(ctx, radius);
+        }
+        //end analog clock
+
+       
+        //result
+        function printResult(result) {
+                $("#response").html(encodeInput(result));
+            }
+
+
+        //joke 
+    function getJoke(){
+       $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+            if (result && result.joke) {
+                var encodeJoke = encodeInput(result.joke);
+                $("#response").html("Programming joke of the day: " + encodeJoke);
+            }
+            else {
+                $("#response").text("couldnot retrieve a joke at this time. ");
+            }
+
+        });
+
+    }
+    getJoke();
+    setInterval(getJoke,60000);
+    
+        //show hide email
+        var shown = false;
+
+            function showhideEmail() {
+                if (shown) {
+                    document.getElementById('email').innerHTML = "Show my email.";
+                    shown = false;
+                }
+                else {
+                    var mye = "<a href='mailto:elisi" + "@" + "mail.uc.edu'>elisi" + "@" + "mail.uc.edu</a>";
+                    document.getElementById('email').innerHTML = mye;
+                    shown = true;
+                }
+            }
+
+
+
+
+   </script>
+  <!--news react api
+<script type="text/babel">
+    // Define a React component for displaying news articles
+    function NewsComponent() {
+        const [articles, setArticles] = React.useState([]);
+
+        React.useEffect(() => {
+            const fetchNews = async () => {
+                try {
+                    const response = await axios.get('https://newsapi.org/v2/top-headlines', {
+                        params: {
+                            apiKey: 'd27ba5a3ecef4ee8bfafe68f46951ede', 
+                            country: 'us', 
+                            pageSize: 5 
+                        }
+                    });
+                    setArticles(response.data.articles);
+                } catch (error) {
+                    console.error('Error fetching news data:', error);
+                }
+            };
+            fetchNews();
+        }, []);
+
+        return (
+            <div>
+                <h2>Top News Headlines</h2>
+                <ul>
+                    {articles.map(article => (
+                        <li key={article.url}><a href={article.url} target="_blank">{article.title}</a></li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+
+    // Render the NewsComponent into the root element
+    ReactDOM.render(<NewsComponent />, document.getElementById('root'));
+</script>-->
+
+<script>
+    $(document).ready(function () {
+        var apiKey = ''; 
+
+        // Make a GET request to Weatherbit API for current weather data
+        $.get("https://api.weatherbit.io/v2.0/current", {
+            key: apiKey,
+            city: 'Cincinnati' // Example city, you can change it to any city you want
+        })
+            .done(function (data) {
+                // Check if the request was successful and data is available
+                if (data && data.data && data.data.length > 0) {
+                    var weatherData = data.data[0];
+                    var temperature = weatherData.temp;
+                    var description = weatherData.weather.description;
+                    var iconCode = weatherData.weather.icon;
+
+                    // Construct the URL for the weather icon
+                    var iconUrl = "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png";
+
+                    // Display weather information on the webpage
+                    $("#weather-icon").attr("src", iconUrl);
+                    $("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
+                        "<p>Description: " + description + "</p>");
+                } else {
+                    $("#weather-info").html("<p>Unable to fetch weather data.</p>");
+                }
+            })
+            .fail(function () {
+                $("#weather-info").html("<p>Error occurred while fetching weather data.</p>");
+            });
+    });
+</script>
+<script>
+    function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        // Function to get the value of a cookie by name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) === 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        // Function to display the appropriate message based on the cookie
+        function displayWelcomeMessage() {
+            var visited = getCookie("visited");
+            if (visited) {
+                document.getElementById("welcome-message").innerHTML = "<p>Welcome back!</p>";
+            } else {
+                document.getElementById("welcome-message").innerHTML = "<p>Welcome!</p>";
+                // Set a cookie with the name "visited" that expires in 30 days
+                setCookie("visited", "true", 30);
+            }
+        }
+
+        // Call the function to display the welcome message
+        displayWelcomeMessage();
+</script>
+    
+</body>
+
+</html>
