@@ -32,7 +32,7 @@ For this website, I have created a new public repository `ShivaniEli.github.io`,
 
 The link to access my website is: [https://shivanieli.github.io/Project1/index.html](https://shivanieli.github.io/Project1/index.html).
 
-![Portfolio Website](images/P1.png)
+![Portfolio Website](Project1/images/P1.png)
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
