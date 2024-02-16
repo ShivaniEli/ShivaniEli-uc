@@ -8,7 +8,7 @@
 
 **Short-bio**: This is Shivani Eli currently pursuing Master's in Information Technology at UC. An IT graduate with a passion for problem solving, and learning new technology to drive innovation.
 
-![Shivani Eli](images/img1.png)
+![Shivani Eli](Project1/images/img1.png)
 
 ## Repository Information
 
@@ -40,9 +40,9 @@ Another html file 'waph.html' is created with the web application programming an
 
 The link to access index.html is: [https://shivanieli.github.io/Project1/index.html](https://shivanieli.github.io/Project1/index.html).
 
-![waph.html page link on website](images/waphhtmllink.png)
+![waph.html page link on website](Project1/images/waphhtmllink.png)
 
-![waph.html page](images/waphhtml.png)
+![waph.html page](Project1/images/waphhtml.png)
 
 ## Non-technical requirements
 
@@ -67,7 +67,7 @@ Code for Flag Counter tracker:
 </div>
 ```
 
-![Flag Counter](images/tracker.png)
+![Flag Counter](Project1/images/tracker.png)
 
 ## Technical requirements
 
@@ -133,8 +133,8 @@ var shown = false;
             }
 ```
 
-![Digital clock](images/digitalclock.png)  
-![Analog clock](images/analog.png)
+![Digital clock](Project1/images/digitalclock.png)  
+![Analog clock](Project1/images/analog.png)
 
 ### One more Functionality of my choice
 
@@ -188,8 +188,8 @@ function StockData() {
                     ReactDOM.render(<StockData />, document.getElementById("stock"));
 ```
 
-![Stock info](images/stock.png)  
-![Linkedin and resume download button](images/lb.png)
+![Stock info](Project1/images/stock.png)  
+![Linkedin and resume download button](Project1/images/lb.png)
 
 ### Joke API
 
@@ -254,8 +254,8 @@ Inluded a weatherbit API to get current weather of Cincinnati with graphics.
 
 ```
 
-![Joke API](images/joke.png)  
-![Weather API](images/weather.png)
+![Joke API](Project1/images/joke.png)  
+![Weather API](Project1/images/weather.png)
 
 ### Javascript Cookies
 
@@ -301,5 +301,5 @@ Then deployed the cookies javascript code for displaying "Welcome back!" alert m
     window.onload = displayWelcomeMessage;
 ```
 
-![First webpage visit](images/one.png)
-![Revisit webpage](images/two.png)
+![First webpage visit](Project1/images/one.png)
+![Revisit webpage](Project1/images/two.png)
