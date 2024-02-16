@@ -58,12 +58,12 @@
 
 <body>
 
-    <!-- Sidebar with image -->
+    <!-- Sidebar with headshot image -->
     <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
         <div class="bgimg"></div>
     </nav>
 
-    <!-- Sidebar (reveals when clicked on menu icon)-->
+    <!-- menu icon-->
     <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge"
         style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
         <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright"
@@ -81,7 +81,7 @@
         </div>
     </nav>
 
-    <!-- Page Content -->
+   
     <div class="w3-main w3-padding-large" style="margin-left:40%">
 
         <!-- Menu icon to open sidebar -->
@@ -93,30 +93,69 @@
                     src="https://s01.flagcounter.com/count2/2NNY/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
                     alt="Flag Counter" border="0"></a>
         </div>
-        <!--cookie-->
-        <h1>
-            <div id="welcome-message" class="w3-container w3-center" style="color: white;">
-                <!-- Welcome message will be displayed here -->
-            </div>
-        </h1>
+       
         <!-- Header -->
         <header class="w3-container w3-center" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo" id="me"><b>Shivani Eli</b></h1>
          
-            <div id="digital-clock"></div>
+            <div id="digital-clock" style="color: #ffff;"></div>
             <div id="email"onclick="showhideEmail()">Click here! Show my email</div>
             <a href="SERESUME.pdf" download>
             <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" action="SERESUME.pdf">
                 <i class="fa fa-download"></i> Download my Resume
             </button>
             </a>
+            <p><i class="w3-xxlarge w3-margin-right"> </i> <a
+                    href="https://www.linkedin.com/in/shivani-eli-266b651a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                    <img src="images/llicon.png" alt="linkedin" height="50" width="60">
+                </a></p>
         </header>
 
-        <!-- Portfolio Section -->
+        <!-- Portfolio-->
         <div class="w3-padding-32 w3-content" id="portfolio">
             <h2 class="w3-text-grey">My Portfolio</h2>
             <hr class="w3-opacity">
+<script>
+    // cookies
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
 
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    
+    function displayWelcomeMessage() {
+        var lastVisit = getCookie("lastVisit");
+        if (!lastVisit) {
+            // First
+            setCookie("lastVisit", new Date().toISOString(), 30); 
+            alert("Welcome to my homepage!");
+        } else {
+            // Revisit
+            var lastVisitDate = new Date(lastVisit);
+            alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
+        }
+    }
+
+    // function call
+    window.onload = displayWelcomeMessage;
+
+</script>
             <!-- weather,analog clock-->
             <div class="w3-row-padding" style="margin:0 -16px">
                 <div class="w3-half">
@@ -138,7 +177,7 @@
             <!-- End Portfolio Section -->
         </div>
 
-        <!-- About Section -->
+        <!-- About, course link-->
         <div class="w3-content w3-justify  w3-padding-32" id="about">
             <div id="summary" style=" color:white;">
             <h2>About</h2>
@@ -185,7 +224,7 @@
                 </div>
             <div class="Experience">
                 <div class="1">
-                    <h2>Experience</h2>
+                    <h2>Work Experience</h2>
                     <hr>
                     <h3>Software Engineer</h3>
                     <h4>LTIMindtree</h4>
@@ -216,8 +255,8 @@
                     <li>Technologies used ReactJS, MongoDB, ExpressJS, NoSQL, NodeJS, JavaScript, HTML,CS</li>
                 </div>
             
-                <!--react news api div and react lib
-                <div class="news" id="root"></div>-->
+                <!--react stock api div and react lib-->
+               
                 <div id="stock"></div>
                 
                 <script type="text/babel">
@@ -273,15 +312,17 @@
 
 
             
-        <!-- Contact Section -->
+        <!-- Contact-->
         <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
             <h2>Contact Me</h2>
             <hr class="w3-opacity">
 
             <div class="w3-section">
                 <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Cincinnati,OH  US</p>
-                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1 (513) 399.0398</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1 (513) 399-0398</p>
                 <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: elisi@mail.uc.edu</p>
+                
+
             </div>
 
             <br><br>
@@ -292,11 +333,11 @@
             <!-- End footer -->
         </footer>
 
-        <!-- END PAGE CONTENT -->
+        <!-- End page -->
     </div>
 
     <script>
-        // Open and close sidebar
+        // Open and close sidebar 
         function openNav() {
             document.getElementById("mySidebar").style.width = "60%";
             document.getElementById("mySidebar").style.display = "block";
@@ -387,67 +428,29 @@
 
 
    </script>
-  <!--news react api
-<script type="text/babel">
-    // Define a React component for displaying news articles
-    function NewsComponent() {
-        const [articles, setArticles] = React.useState([]);
-
-        React.useEffect(() => {
-            const fetchNews = async () => {
-                try {
-                    const response = await axios.get('https://newsapi.org/v2/top-headlines', {
-                        params: {
-                            apiKey: 'd27ba5a3ecef4ee8bfafe68f46951ede', 
-                            country: 'us', 
-                            pageSize: 5 
-                        }
-                    });
-                    setArticles(response.data.articles);
-                } catch (error) {
-                    console.error('Error fetching news data:', error);
-                }
-            };
-            fetchNews();
-        }, []);
-
-        return (
-            <div>
-                <h2>Top News Headlines</h2>
-                <ul>
-                    {articles.map(article => (
-                        <li key={article.url}><a href={article.url} target="_blank">{article.title}</a></li>
-                    ))}
-                </ul>
-            </div>
-        );
-    }
-
-    // Render the NewsComponent into the root element
-    ReactDOM.render(<NewsComponent />, document.getElementById('root'));
-</script>-->
 
 <script>
+    //weather api
     $(document).ready(function () {
-        var apiKey = ''; 
+        var apiKey = '74516cb77ec742629b8fa2c6bead25ad'; 
 
-        // Make a GET request to Weatherbit API for current weather data
+
         $.get("https://api.weatherbit.io/v2.0/current", {
             key: apiKey,
-            city: 'Cincinnati' // Example city, you can change it to any city you want
+            city: 'Cincinnati' 
         })
             .done(function (data) {
-                // Check if the request was successful and data is available
+                
                 if (data && data.data && data.data.length > 0) {
                     var weatherData = data.data[0];
                     var temperature = weatherData.temp;
                     var description = weatherData.weather.description;
                     var iconCode = weatherData.weather.icon;
 
-                    // Construct the URL for the weather icon
+                   
                     var iconUrl = "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png";
 
-                    // Display weather information on the webpage
+                    // Display 
                     $("#weather-icon").attr("src", iconUrl);
                     $("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
                         "<p>Description: " + description + "</p>");
@@ -460,49 +463,49 @@
             });
     });
 </script>
+
+
 <script>
+    // cookie
     function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + expires + "; path=/";
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
         }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
 
-        // Function to get the value of a cookie by name
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                while (cookie.charAt(0) === ' ') {
-                    cookie = cookie.substring(1, cookie.length);
-                }
-                if (cookie.indexOf(nameEQ) === 0) {
-                    return cookie.substring(nameEQ.length, cookie.length);
-                }
-            }
-            return null;
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
         }
+        return null;
+    }
 
-        // Function to display the appropriate message based on the cookie
-        function displayWelcomeMessage() {
-            var visited = getCookie("visited");
-            if (visited) {
-                document.getElementById("welcome-message").innerHTML = "<p>Welcome back!</p>";
-            } else {
-                document.getElementById("welcome-message").innerHTML = "<p>Welcome!</p>";
-                // Set a cookie with the name "visited" that expires in 30 days
-                setCookie("visited", "true", 30);
-            }
+    //  welcome message
+    function displayWelcomeMessage() {
+        var lastVisit = getCookie("lastVisit");
+        if (!lastVisit) {
+            
+            setCookie("lastVisit", new Date().toISOString(), 30); // Set cookie to expire in 30 days
+            alert("Welcome to my homepage!");
+        } else {
+            
+            var lastVisitDate = new Date(lastVisit);
+            alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
         }
+    }
 
-        // Call the function to display the welcome message
-        displayWelcomeMessage();
+    // function call
+    window.onload = displayWelcomeMessage;
+
 </script>
-    
 </body>
 
 </html>
